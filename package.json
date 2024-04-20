@@ -1,0 +1,46 @@
+{
+  "name": "stis-su-next",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build --profile",
+    "start": "next start",
+    "pull": "git pull && yarn install && next build --profile && pm2 restart all",
+    "lint": "next lint",
+    "lint:fix": "eslint ./src --ext .jsx,.js,.ts,.tsx --quiet --fix --ignore-path ./.gitignore",
+    "update-packages": "node scripts/update-packages.cjs && yarn install"
+  },
+  "dependencies": {
+    "next": "14.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-input-mask": "2.0.4",
+    "sass": "1.75.0",
+    "zustand": "4.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.7",
+    "@types/nodemailer": "6.4.14",
+    "@types/react": "18.2.79",
+    "@types/react-dom": "18.2.25",
+    "@types/react-input-mask": "3.0.5",
+    "@typescript-eslint/eslint-plugin": "7.7.0",
+    "@typescript-eslint/parser": "7.7.0",
+    "eslint": "9.1.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "18.0.0",
+    "eslint-config-next": "14.2.2",
+    "eslint-config-prettier": "9.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-prettier": "5.1.3",
+    "eslint-plugin-react": "7.34.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "12.1.0",
+    "eslint-plugin-unused-imports": "3.1.0",
+    "postcss-pxtorem": "6.1.0",
+    "prettier": "3.2.5",
+    "typescript": "5.4.5"
+  }
+}
