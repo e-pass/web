@@ -30,7 +30,7 @@ To start using E-pass for your extracurricular activities, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone git@github.com:e-pass/app.git
+   git clone git@github.com:e-pass/web.git
    ```
 
 2. Install dependencies:
