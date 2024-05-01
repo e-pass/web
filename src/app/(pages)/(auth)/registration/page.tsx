@@ -7,8 +7,6 @@ import Link from "next/link";
 import { Button, Header, Input } from "@/components";
 
 const RegistrationPage = () => {
-    const placeholders = ["Имя", "Фамилия", "Номер телефона"];
-
     return (
         <section className="registration">
             <Header showCross showLogo>
@@ -22,9 +20,9 @@ const RegistrationPage = () => {
             </Header>
 
             <div className="registration__inputs">
-                {placeholders.map((placeholder, i) => (
-                    <Input key={i} placeholder={placeholder} />
-                ))}
+                <Input placeholder="Имя" />
+                <Input placeholder="Фамилия" />
+                <Input placeholder="Номер телефона" />
             </div>
 
             <Button title="Зарегистрироваться" />
