@@ -3,7 +3,7 @@
 import "./sms-code.scss";
 
 import clsx from "clsx";
-import { useId, useMemo, useState } from "react";
+import { ChangeEvent, useEffect, useMemo, useRef, useState } from "react";
 
 import { Header } from "@/components";
 
@@ -13,18 +13,56 @@ interface ISmsCodeProps {
     };
 }
 
+interface IDigit {
+    value: string;
+    isActive: boolean;
+}
+
+const Digit = ({ value, isActive }: IDigit) => {
+    return (
+        <div
+            className={clsx(
+                "sms-code__digits-item",
+                isActive && "sms-code__digits-item_active"
+            )}>
+            <span>{value}</span>
+            <div />
+        </div>
+    );
+};
+
 // const TIMER_SECONDS = 60;
 
 const SmsCodePage = ({ params }: ISmsCodeProps) => {
+    const inputRef = useRef<HTMLInputElement>(null);
     const [value, setValue] = useState<string>("");
 
     const { phoneNumber } = params;
 
-    const inputId = useId();
-
     const digits = useMemo(() => {
-        return value.padEnd(4, " ").split("");
+        const items: IDigit[] = [];
+
+        value
+            .padEnd(4, " ")
+            .split("")
+            .forEach((item, index) => {
+                items.push({
+                    value: item,
+                    isActive: value.length === index,
+                });
+            });
+
+        return items;
     }, [value]);
+
+    const handleChangeValue = (ev: ChangeEvent<HTMLInputElement>) => {
+        ev.preventDefault();
+        if (ev.target.value.length <= 4) setValue(ev.target.value);
+    };
+
+    useEffect(() => {
+        if (inputRef.current) inputRef.current.focus();
+    }, []);
 
     return (
         <>
@@ -35,30 +73,21 @@ const SmsCodePage = ({ params }: ISmsCodeProps) => {
                 </p>
             </Header>
 
-            <div className="sms-code__digits">
+            <label htmlFor="inputDigits" className="sms-code__digits">
                 <input
-                    id={inputId}
-                    className="sms-code__digits-input"
-                    value={value}
-                    onChange={(ev) => setValue(ev.target.value)}
+                    id="inputDigits"
                     type="number"
+                    ref={inputRef}
+                    value={value}
+                    onChange={handleChangeValue}
+                    className="sms-code__digits-input"
                 />
                 {digits.map((item, index) => {
-                    const isActive = digits[index - 1] === " ";
-
                     return (
-                        <div
-                            key={index}
-                            className={clsx(
-                                "sms-code__digits-item",
-                                isActive && "sms-code__digits-item_active"
-                            )}>
-                            <span>{item}</span>
-                            <div />
-                        </div>
+                        <Digit key={index} value={item.value} isActive={item.isActive} />
                     );
                 })}
-            </div>
+            </label>
         </>
     );
 };
