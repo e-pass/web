@@ -1,16 +1,17 @@
-import "./input.scss";
+import "./primary-input.scss";
 
-import React from "react";
+import { ChangeEvent, useState } from "react";
 
 interface IInputProps {
     placeholder: string;
+    type: string;
 }
 
-export const Input = ({ placeholder }: IInputProps) => {
-    const [text, setText] = React.useState("");
-    const [focused, setFocused] = React.useState(false);
+export const Input = ({ placeholder, type }: IInputProps) => {
+    const [text, setText] = useState<string>("");
+    const [focused, setFocused] = useState<boolean>(false);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
         setText(e.target.value);
     };
 
@@ -27,9 +28,9 @@ export const Input = ({ placeholder }: IInputProps) => {
     return (
         <div className="input-container">
             <input
+                type={type}
                 id="input"
                 className="input"
-                type="text"
                 value={text}
                 onChange={handleInputChange}
                 onFocus={handleFocus}

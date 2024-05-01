@@ -20,12 +20,12 @@ const RegistrationPage = () => {
             </Header>
 
             <div className="registration__inputs">
-                <Input placeholder="Имя" />
-                <Input placeholder="Фамилия" />
-                <Input placeholder="Номер телефона" />
+                <Input type="text" placeholder="Имя" />
+                <Input type="text" placeholder="Фамилия" />
+                <Input type="tel" placeholder="Номер телефона" />
             </div>
 
-            <Button title="Зарегистрироваться" />
+            <Button disabled title="Зарегистрироваться" />
         </section>
     );
 };
