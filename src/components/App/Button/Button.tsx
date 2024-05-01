@@ -1,16 +1,14 @@
-import "./button.scss";
+import "./Button.scss";
 
-interface ButtonProps {
+interface IButtonProps {
     title: string;
     disabled?: boolean;
 }
 
-const Button = ({ title, disabled }: ButtonProps) => {
+export const Button = ({ title, disabled }: IButtonProps) => {
     return (
         <button className="qwer" disabled={disabled} type="submit">
             {title}
         </button>
     );
 };
-
-export default Button;
