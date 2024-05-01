@@ -1,6 +1,6 @@
 import "./registration.scss";
 
-import Button from "../../../components/App/button/button";
+import Button from "@/components/App/button/button";
 
 const RegistrationPage = () => {
     return (
