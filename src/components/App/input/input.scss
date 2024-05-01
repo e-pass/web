@@ -1,0 +1,44 @@
+@import "@/styles/helpers.scss";
+
+.input-container {
+    position: relative;
+}
+
+.input {
+    position: relative;
+    background-color: $color-black-050;
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 16px;
+    transition: all 0.3s;
+    outline: none;
+    border: none;
+    color: $color-black-800;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: -1%;
+    text-align: left;
+}
+
+.input:focus + label {
+    top: 10px;
+    font-size: 13px;
+    letter-spacing: -1%;
+    color: $color-black-300;
+    font-weight: 400;
+}
+
+.placeholder {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+    pointer-events: none;
+    color: #999;
+}
+
+.placeholder.active {
+    top: 0px;
+}

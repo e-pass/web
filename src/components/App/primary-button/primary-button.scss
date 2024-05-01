@@ -1,0 +1,13 @@
+@import "@/styles/helpers.scss";
+
+.button {
+    background-color: $color-coral_300;
+    padding: 16px 16px;
+    border-radius: 20px;
+    color: $color-black-050;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: -1%;
+}

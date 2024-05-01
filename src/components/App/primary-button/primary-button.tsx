@@ -1,4 +1,4 @@
-import "./button.scss";
+import "./primary-button.scss";
 
 interface IButtonProps {
     title: string;
@@ -7,7 +7,7 @@ interface IButtonProps {
 
 export const Button = ({ title, disabled }: IButtonProps) => {
     return (
-        <button className="qwer" disabled={disabled} type="submit">
+        <button className="button" disabled={disabled} type="submit">
             {title}
         </button>
     );

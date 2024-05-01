@@ -1,8 +1,10 @@
+"use client";
+
 import "./registration.scss";
 
 import Link from "next/link";
 
-import { Button, Header } from "@/components";
+import { Button, Header, Input } from "@/components";
 
 const RegistrationPage = () => {
     return (
@@ -16,7 +18,7 @@ const RegistrationPage = () => {
                     </Link>
                 </p>
             </Header>
-
+            <Input placeholder="Имя" />
             <Button title="Зарегистрироваться" />
         </>
     );
