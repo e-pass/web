@@ -12,11 +12,10 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      background: #f002;
+      width: 0;
+      height: 0;
       z-index: 1;
+      opacity: 0;
     }
 
     &-item {
@@ -46,10 +45,10 @@
         animation: cursor infinite 1s;
         display: none;
       }
+    }
 
-      &_active div {
-        display: block;
-      }
+    &-input:focus ~ &-item_active div {
+      display: block;
     }
   }
 }
