@@ -15,6 +15,8 @@ const RegistrationPage = () => {
                 </Link>
             </p>
         </Header>
+
+        <Button title="Зарегистрироваться" />
     );
 };
 
