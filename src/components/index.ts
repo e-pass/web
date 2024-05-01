@@ -1,2 +1,2 @@
-export { Button } from "@/components/App/button/button";
-export { Header } from "@/components/The/header/header";
+export { Button } from "./App/button/button";
+export { Header } from "./The/header/header";
