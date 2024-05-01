@@ -1,0 +1,24 @@
+@import "./variables";
+
+.primary-title {
+  font-size: 34px;
+  line-height: 36px;
+  font-weight: 700;
+  color: $color-header_primary;
+  letter-spacing: -0.36px;
+}
+
+.primary-subtitle {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 16px;
+  letter-spacing: -0.16px;
+  font-weight: 400;
+  color: $color-paragraph-primary;
+}
+
+.primary-link {
+  color: $color-action;
+  font-weight: 700;
+  text-decoration: underline;
+}
