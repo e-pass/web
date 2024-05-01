@@ -1,3 +1,6 @@
-.registration {
-
+.registration__inputs {
+    display: flex;
+    flex-direction: column;
+    margin: 28px 0 24px 0;
+    gap: 24px;
 }
