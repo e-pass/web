@@ -1,4 +1,4 @@
-import "./Button.scss";
+import "./button.scss";
 
 interface IButtonProps {
     title: string;
