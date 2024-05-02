@@ -17,8 +17,10 @@ const AuthPage = () => {
                 </p>
             </Header>
 
-            <Input placeholder="Номер телефона" />
-            <Button title="Войти" />
+            <div className="auth__container">
+                <Input type="tel" placeholder="Номер телефона" />
+                <Button title="Войти" />
+            </div>
         </section>
     );
 };

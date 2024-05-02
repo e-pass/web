@@ -1,3 +1,5 @@
+"use client";
+
 import "./primary-input.scss";
 
 import { ChangeEvent, useState } from "react";

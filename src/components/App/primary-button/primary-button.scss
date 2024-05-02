@@ -12,6 +12,7 @@
     letter-spacing: -1%;
 
     &:disabled {
-        opacity: 0.5;
+        background-color: $color-black-300;
+        cursor: not-allowed;
     }
 }
