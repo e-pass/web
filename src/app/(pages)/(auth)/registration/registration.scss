@@ -1,6 +1,20 @@
+@import "@/styles/helpers.scss";
+
 .registration__inputs {
     display: flex;
     flex-direction: column;
     margin: 28px 0 24px 0;
     gap: 24px;
+}
+
+.registration__checkboxes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkbox__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
 }
