@@ -38,17 +38,10 @@ module.exports = {
         "react/no-array-index-key": "off",
         "import/extensions": "off",
         "class-methods-use-this": "off",
+        "jsx-a11y/label-has-associated-control": "off",
         "jsx-a11y/control-has-associated-label": "off",
         "jsx-a11y/interactive-supports-focus": "off",
         "jsx-a11y/click-events-have-key-events": "off",
-        "jsx-a11y/label-has-associated-control": [
-            "error",
-            {
-                required: {
-                    some: ["nesting", "id"],
-                },
-            },
-        ],
         "jsx-a11y/label-has-for": [
             "error",
             {

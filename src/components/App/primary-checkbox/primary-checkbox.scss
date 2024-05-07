@@ -1,0 +1,36 @@
+.primary-input {
+  cursor: pointer;
+  user-select: none;
+  padding: 4px 0;
+
+  input {
+    display: none;
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 16px;
+    letter-spacing: -0.15px;
+    display: flex;
+    align-items: flex-start;
+
+    span {
+      margin-top: 4px;
+    }
+
+    &::before {
+      content: "";
+      display: block;
+      margin-right: 8px;
+      flex-shrink: 0;
+      width: 24px;
+      background: url("/icons/checkbox-off.svg") center no-repeat;
+      height: 24px;
+      background-size: cover;
+    }
+  }
+
+  input:checked ~ p::before {
+    background: url("/icons/checkbox-on.svg") center no-repeat;
+  }
+}

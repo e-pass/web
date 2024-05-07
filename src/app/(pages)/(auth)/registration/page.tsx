@@ -3,10 +3,16 @@
 import "./registration.scss";
 
 import Link from "next/link";
+import { useRef, useState } from "react";
 
-import { Button, Header, Input } from "@/components";
+import { Button, Header, Input, PrimaryCheckbox } from "@/components";
 
 const RegistrationPage = () => {
+    const [isTrainer, setIsTrainer] = useState<boolean>(false);
+    const [isAcceptPolicy, setIsAcceptPolicy] = useState<boolean>(false);
+
+    const formRef = useRef<HTMLFormElement>(null);
+
     return (
         <section className="registration">
             <Header showCross showLogo>
@@ -19,26 +25,23 @@ const RegistrationPage = () => {
                 </p>
             </Header>
 
-            <div className="registration__inputs">
+            <form ref={formRef} className="registration__inputs">
                 <Input type="text" placeholder="Имя" />
                 <Input type="text" placeholder="Фамилия" />
                 <Input type="tel" placeholder="Номер телефона" />
-            </div>
+                <PrimaryCheckbox
+                    text="Я — тренер"
+                    isChecked={isTrainer}
+                    changeActive={() => setIsTrainer((prevState) => !prevState)}
+                />
+                <PrimaryCheckbox
+                    text="Соглашаюсь с Политикой обработки персональных данных"
+                    isChecked={isAcceptPolicy}
+                    changeActive={() => setIsAcceptPolicy((prevState) => !prevState)}
+                />
+            </form>
 
-            <div className="registration__checkboxes">
-                <div className="checkbox__container">
-                    <input id="coach" className="checkbox" type="checkbox" />
-                    <label htmlFor="coach">Я — тренер</label>
-                </div>
-                <div className="checkbox__container">
-                    <input id="conversation" className="checkbox" type="checkbox" />
-                    <label htmlFor="conversation">
-                        Соглашаюсь с Политикой обработки персональных данных
-                    </label>
-                </div>
-            </div>
-
-            <Button disabled title="Зарегистрироваться" />
+            <Button disabled={false} title="Зарегистрироваться" />
         </section>
     );
 };
